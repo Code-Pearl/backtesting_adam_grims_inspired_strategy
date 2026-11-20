@@ -1,0 +1,79 @@
+
+================ US intraday 15m (yfinance)  (26 markets, 0.3s) ================
+setups: pullback, failtest | shorts: True | slippage 3.0 bps/side | risk 0.50%/trade | weekly filter: True
+
+POOLED (R = profit / initial risk, after slippage):
+N               379.000
+win               0.375
+avgR             -0.357
+sd                0.997
+avg_win           0.805
+avg_loss         -1.053
+PF                0.458
+t                -6.970
+p_one_tailed      1.000
+
+By setup:
+               N    win   avgR     sd  avg_win  avg_loss     PF      t  p_one_tailed
+failtest  341.0  0.361 -0.388  1.010    0.833    -1.077  0.437 -7.087         1.000
+pullback   38.0  0.500 -0.079  0.825    0.622    -0.781  0.796 -0.594         0.722
+
+By side:
+            N    win   avgR     sd  avg_win  avg_loss     PF      t  p_one_tailed
+long   210.0  0.314 -0.463  0.961    0.833    -1.057  0.361 -6.985         1.000
+short  169.0  0.450 -0.225  1.027    0.780    -1.046  0.610 -2.844         0.997
+
+By group:
+                 N    win   avgR     sd  avg_win  avg_loss     PF      t  p_one_tailed
+Bonds/Gold   78.0  0.462 -0.187  1.032    0.781    -1.016  0.659 -1.598         0.943
+Intl ETFs   122.0  0.311 -0.519  0.944    0.760    -1.097  0.313 -6.070         1.000
+US broad     52.0  0.308 -0.490  0.953    0.767    -1.048  0.325 -3.703         1.000
+US sectors  127.0  0.409 -0.252  1.022    0.865    -1.026  0.585 -2.773         0.997
+
+By period (N, avg R):
+ period  2026-09  2026-10  2026-11
+count   115.000  176.000   88.000
+mean     -0.319   -0.371   -0.378
+
+PER MARKET (best to worst):
+              group   N    win   avgR      t
+symbol                                     
+XLB     US sectors  11  0.636  0.288  0.805
+GLD     Bonds/Gold  15  0.600  0.111  0.397
+XLI     US sectors  19  0.526  0.048  0.195
+XLU     US sectors  18  0.500  0.018  0.069
+DIA       US broad  15  0.533 -0.021 -0.079
+EWZ      Intl ETFs  15  0.467 -0.079 -0.316
+SLV     Bonds/Gold  23  0.522 -0.093 -0.431
+XLP     US sectors  12  0.417 -0.152 -0.456
+EEM      Intl ETFs  11  0.364 -0.217 -0.656
+XLY     US sectors  18  0.444 -0.289 -1.258
+EWU      Intl ETFs  11  0.364 -0.305 -1.070
+EWY      Intl ETFs  18  0.389 -0.319 -1.282
+IEF     Bonds/Gold  17  0.412 -0.349 -1.484
+TLT     Bonds/Gold  23  0.348 -0.354 -1.620
+XLE     US sectors  10  0.300 -0.475 -1.642
+XLK     US sectors  11  0.273 -0.512 -1.542
+QQQ       US broad  11  0.273 -0.576 -1.751
+IWM       US broad  10  0.200 -0.606 -2.387
+INDA     Intl ETFs  19  0.316 -0.607 -2.807
+XLV     US sectors  16  0.250 -0.610 -3.704
+EWJ      Intl ETFs  16  0.250 -0.730 -3.235
+XLF     US sectors  12  0.250 -0.765 -3.283
+EWG      Intl ETFs  13  0.231 -0.790 -3.204
+SPY       US broad  16  0.188 -0.796 -4.033
+EFA      Intl ETFs  10  0.100 -0.889 -4.483
+FXI      Intl ETFs   9  0.222 -0.915 -3.999
+
+PORTFOLIO: final $96,555 (start $100,000)  CAGR -15.32%  maxDD(realized only) -3.6%  skipped(no capacity) 54
+
+---------- EVIDENCE CHECKLIST (is it universal, or hand-picked luck?) ----------
+  [PASS] enough trades (N=379, want >= 300)
+  [FAIL] positive expectancy after costs (avg R = -0.357)
+  [FAIL] statistically strong (t = -6.97, want >= 3 because many things were tried)
+  [FAIL] works across markets (4/25 markets positive, sign-test p = 1.000)
+  [FAIL] works across regions/asset classes (0/4 groups positive)
+  => NOT demonstrated: the evidence does not support a universal, automatable edge for these rules.
+  Note: p-values assume independent trades; overlapping trades in correlated markets make them optimistic.
+
+Saved to results\US_15m_20261120_234702/ : trades.csv, per_market.csv, equity.png, scoreboard.png, report.txt

@@ -1,0 +1,75 @@
+
+================ World intraday 15m (yfinance)  (22 markets, 0.3s) ================
+setups: pullback, failtest | shorts: True | slippage 3.0 bps/side | risk 0.50%/trade | weekly filter: True
+
+POOLED (R = profit / initial risk, after slippage):
+N               346.000
+win               0.355
+avgR             -0.394
+sd                1.055
+avg_win           0.893
+avg_loss         -1.103
+PF                0.447
+t                -6.935
+p_one_tailed      1.000
+
+By setup:
+               N    win   avgR     sd  avg_win  avg_loss     PF      t  p_one_tailed
+failtest  325.0  0.351 -0.397  1.073    0.929    -1.114  0.451 -6.671         1.000
+pullback   21.0  0.429 -0.337  0.741    0.435    -0.915  0.356 -2.082         0.975
+
+By side:
+            N    win   avgR     sd  avg_win  avg_loss     PF      t  p_one_tailed
+long   185.0  0.330 -0.452  0.999    0.846     -1.09  0.382 -6.147           1.0
+short  161.0  0.385 -0.327  1.116    0.940     -1.12  0.526 -3.715           1.0
+
+By group:
+                     N    win   avgR     sd  avg_win  avg_loss     PF      t  p_one_tailed
+Americas ex-US   40.0  0.500  0.092  1.111    1.055    -0.871  1.211  0.523         0.302
+Asia-Pacific     67.0  0.313 -0.484  0.999    0.845    -1.090  0.354 -3.962         1.000
+Europe          189.0  0.344 -0.465  1.054    0.871    -1.165  0.392 -6.059         1.000
+US               50.0  0.340 -0.392  1.015    0.848    -1.032  0.424 -2.734         0.996
+
+By period (N, avg R):
+ period  2026-08  2026-09  2026-10  2026-11
+count     1.000  123.000  126.000   96.000
+mean     -0.519   -0.449   -0.251   -0.509
+
+PER MARKET (best to worst):
+                     group   N    win   avgR      t
+symbol                                            
+^MXX       Americas ex-US   7  0.714  0.556  2.122
+^BVSP      Americas ex-US  21  0.571  0.194  0.929
+^N225        Asia-Pacific   5  0.600 -0.054 -0.108
+^AEX               Europe  29  0.379 -0.274 -1.249
+^RUT                   US   8  0.375 -0.287 -0.654
+^IXIC                  US  14  0.286 -0.306 -0.985
+^DJI                   US  15  0.400 -0.349 -1.470
+^GSPTSE    Americas ex-US  12  0.250 -0.357 -0.860
+^KS11        Asia-Pacific   7  0.286 -0.363 -0.768
+^IBEX              Europe  30  0.367 -0.379 -1.859
+^AXJO        Asia-Pacific  14  0.357 -0.411 -1.453
+^STOXX50E          Europe  25  0.400 -0.429 -2.299
+^STI         Asia-Pacific  20  0.300 -0.482 -2.207
+^SSMI              Europe  30  0.367 -0.490 -2.703
+^FCHI              Europe  23  0.304 -0.517 -2.313
+^NSEI        Asia-Pacific   7  0.286 -0.559 -1.146
+^GDAXI             Europe  25  0.280 -0.580 -2.771
+^HSI         Asia-Pacific   7  0.286 -0.594 -1.868
+^GSPC                  US  13  0.308 -0.601 -2.432
+^FTSE              Europe  27  0.296 -0.617 -2.979
+^BSESN       Asia-Pacific   5  0.200 -0.895 -2.774
+^TWII        Asia-Pacific   2    NaN    NaN    NaN
+
+PORTFOLIO: final $95,919 (start $100,000)  CAGR -17.32%  maxDD(realized only) -4.1%  skipped(no capacity) 0
+
+---------- EVIDENCE CHECKLIST (is it universal, or hand-picked luck?) ----------
+  [PASS] enough trades (N=346, want >= 300)
+  [FAIL] positive expectancy after costs (avg R = -0.394)
+  [FAIL] statistically strong (t = -6.94, want >= 3 because many things were tried)
+  [FAIL] works across markets (1/14 markets positive, sign-test p = 1.000)
+  [FAIL] works across regions/asset classes (0/4 groups positive)
+  => NOT demonstrated: the evidence does not support a universal, automatable edge for these rules.
+  Note: p-values assume independent trades; overlapping trades in correlated markets make them optimistic.
+
+Saved to results\World_15m_20261120_234614/ : trades.csv, per_market.csv, equity.png, scoreboard.png, report.txt
