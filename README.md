@@ -2,7 +2,7 @@
 
 A one-file, self-contained backtest laboratory for **Adam Grimes' "The Art and Science of Technical Analysis"** (2012) — with rigorous no-lookahead verification, multi-market universes, and built-
 
-![image]([/results/US_15m_20261120_234702/equity.png) 
+![image](/results/US_15m_20261120_234702/equity.png) 
 ---
 
 ## What This Is
