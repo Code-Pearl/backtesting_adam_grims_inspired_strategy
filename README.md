@@ -1,8 +1,7 @@
 # 📈 Grimes Method Backtest Lab
 
-A one-file, self-contained backtest laboratory for **Adam Grimes' "The Art and Science of Technical Analysis"** (2012) — with rigorous no-lookahead verification, multi-market universes, and built-in honesty checks.
-
-[!results/US_15m_20261120_234702/equity.png]!{!results/US_15m_20261120_234702/equity.png}
+A one-file, self-contained backtest laboratory for **Adam Grimes' "The Art and Science of Technical Analysis"** (2012) — with rigorous no-lookahead verification, multi-market universes, and built-
+!{results/US_15m_20261120_234702/equity.png}
 ---
 
 ## What This Is
